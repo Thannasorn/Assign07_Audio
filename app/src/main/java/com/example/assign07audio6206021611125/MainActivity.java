@@ -97,10 +97,12 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
                 if (!mPlayer.isPlaying()){
                     if(isPause){
                         mPlayer.start();
+                        Toast.makeText(this, "Play",Toast.LENGTH_SHORT).show();
                     }
                     else {
                         mPlayer = MediaPlayer.create(this, resId);
                         mPlayer.start();
+                        Toast.makeText(this, "Play",Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -110,11 +112,13 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
                 mPlayer.release();
                 mPlayer = null;
                 isPause = false;
+                Toast.makeText(this, "Stop",Toast.LENGTH_SHORT).show();
             }
         } else if (view.getId() == R.id.btnPause) {
             if (mPlayer.isPlaying()) {
                 mPlayer.pause();
                 isPause = true;
+                Toast.makeText(this, "Pause",Toast.LENGTH_SHORT).show();
             }
         }
     }
